@@ -3,12 +3,14 @@ import warnings
 
 
 class Task:
-    def __init__(self, function, interval, count=0):
+    def __init__(self, function, interval, count=0, *args, **kwargs):
         self._task = None
         self.function = function
         self.interval = interval / 1000
         self.count = count
         self._count = count
+        self.args = args
+        self.kwargs = kwargs
         self.is_running = False
 
     def _run(self):
@@ -22,7 +24,7 @@ class Task:
         if self.count == 0:
             self.is_running = False
             self.start()
-            self.function()
+            self.function(*self.args, **self.kwargs)
 
     def start(self):
         if self.is_running is not True:
