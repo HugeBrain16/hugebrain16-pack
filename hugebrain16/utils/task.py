@@ -19,6 +19,8 @@ class Task:
             self.start()
             self.count -= 1
             self.function(*self.args, **self.kwargs)
+        else:
+            self.is_running = False
 
     def _inf_run(self):
         if self.count == 0:
