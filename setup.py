@@ -2,7 +2,7 @@ import setuptools
 
 metadata = {
     "name": "hugebrain16",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "author": "HugeBrain16",
     "author_email": "joshtuck373@gmail.com",
     "url": "https://github.com/hugebrain16-pack",
